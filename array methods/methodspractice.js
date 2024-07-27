@@ -12,6 +12,48 @@ function camelize(str){
 
 console.log(camelize("background-color"));
 
+//#2 - Filter range
+//Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
+function filterRange(arr, a, b){
+  let filtered = arr.filter((item)=>{
+    return item >= a && item <= b;
+  });
+  return filtered;
+}
+let test = [5, 3, 8, 1]
+console.log(filterRange(test, 1, 4))
+console.log(test);
+//#3 - filter in place
+function filterRangeInPlace(arr, a, b){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] < a || arr[i] > b){
+      arr.splice(i, 1);
+      //i--;
+    }
+  }
+}
+let test1 = [5, 3, 8, 1]; 
+filterRangeInPlace(test1, 1, 4);
+console.log(test1);
+
+
+//#4 - sort in decreasing order
+let myArr = [5, 2, 1, -10, 8];
+myArr.sort((a,b)=>{
+  return b-a;
+})
+console.log(myArr);
+
+
+//#5 - copy and sorty array
+function copySorted(arr){
+  let newArr = [];
+  newArr = newArr.concat(arr);
+  return newArr.sort();
+}
+let unsortedArr = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(unsortedArr);
+console.log(sorted);
 /////🔽methods below
 
 /**
